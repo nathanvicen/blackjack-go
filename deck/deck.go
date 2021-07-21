@@ -17,12 +17,14 @@ func (d Deck) Print() {
 func MultipleNewDecks(numDecks int) Deck {
 	cards := Deck{}
 	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
-	cardValues := []string{"Ace", "Two", "Ten", "Jack", "Queen", "King" } //"Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"}
+	cardValues := []string{"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" }
 
 	for i := 0; i < numDecks; i++ {
 		for _, suit := range cardSuits {
+			unicode := ""
 			for _, value := range cardValues {
-				cards = append(cards, NewCard(suit, value))
+
+				cards = append(cards, NewCard(suit, value, unicode))
 			}
 		}
 	}
@@ -36,7 +38,7 @@ func NewDeck() Deck {
 
 	for _, suit := range cardSuits {
 		for _, value := range cardValues {
-			cards = append(cards, NewCard(suit, value))
+			cards = append(cards, NewCard(suit, value, ""))
 		}
 	}
 	return cards

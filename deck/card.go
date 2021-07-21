@@ -7,14 +7,16 @@ type Card struct {
 	Value string
 	Name  string
 	Show  bool
+	Unicode string
 }
 
-func NewCard(suit string, value string) Card {
+func NewCard(suit string, value string, unicode string) Card {
 	return Card{
 		Suit:  suit,
 		Value: value,
 		Name:  value + " of " + suit,
 		Show: true,
+		Unicode: unicode,
 	}
 }
 
