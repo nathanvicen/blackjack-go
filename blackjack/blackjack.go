@@ -139,7 +139,7 @@ func (h *Hand) CheckNaturals() Result {
 
 func (h *Hand) PrintShowAll() {
 	for _, card := range h.Cards {
-		fmt.Println(card.Name)
+		fmt.Println(card.Symbol)
 	}
 	fmt.Printf("Hand Total: %d", h.Value)
 	fmt.Println("")
@@ -153,11 +153,12 @@ func (h *Hand) PrintShowAll() {
 func (h *Hand) Print() {
 	for _, card := range h.Cards {
 		if card.Show == true {
-			fmt.Println(card.Name)
+			fmt.Print(card.Symbol)
 		} else {
-			fmt.Println("???")
+			fmt.Println(deck.AsciiHiddenCard())
 		}
 	}
+	fmt.Println("")
 	fmt.Printf("Hand Total: %d", h.DisplayValue)
 	fmt.Println("")
 
@@ -170,9 +171,9 @@ func (h *Hand) Print() {
 func (h *Hand) PrintDealer() {
 	for _, card := range h.Cards {
 		if card.Show == true {
-			fmt.Println(card.Name)
+			fmt.Println(card.Symbol)
 		} else {
-			fmt.Println("???")
+			fmt.Println(deck.AsciiHiddenCard())
 		}
 	}
 	fmt.Printf("Hand Total: %d", h.DisplayValue)

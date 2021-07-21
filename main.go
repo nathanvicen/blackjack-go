@@ -90,8 +90,6 @@ func printHands(playerHand blackjack.Hand, dealerHand blackjack.Hand) {
 	fmt.Println("")
 	playerHand.Print()
 	fmt.Println("")
-	fmt.Printf("Player Hand %+v\n", playerHand)
-	fmt.Println("")
 	printFooter()
 
 	fmt.Println("")
@@ -99,8 +97,6 @@ func printHands(playerHand blackjack.Hand, dealerHand blackjack.Hand) {
 	fmt.Println("----------------------- DEALER HAND ----------------------")
 	fmt.Println("")
 	dealerHand.PrintDealer()
-	fmt.Println("")
-	fmt.Printf("Dealer Hand %+v\n", dealerHand)
 	fmt.Println("")
 	printFooter()
 

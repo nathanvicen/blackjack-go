@@ -21,10 +21,8 @@ func MultipleNewDecks(numDecks int) Deck {
 
 	for i := 0; i < numDecks; i++ {
 		for _, suit := range cardSuits {
-			unicode := ""
 			for _, value := range cardValues {
-
-				cards = append(cards, NewCard(suit, value, unicode))
+				cards = append(cards, NewCard(suit, value, AsciiVersionOfCard(suit, value)))
 			}
 		}
 	}
